@@ -2,7 +2,7 @@
 Blackjack Demo with Coldfusion and AngularJs
 
 # Demo
-	- [Live Demo](http://ec2-52-3-254-64.compute-1.amazonaws.com/app/)
+	- http://ec2-52-3-254-64.compute-1.amazonaws.com/app/
     - Server AWS Micro Instance - It's a little slow, but does the job.
 
 # Required Downloads
