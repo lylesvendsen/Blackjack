@@ -1,0 +1,50 @@
+<div id="game-table" class="container-fluid">
+
+	<!-- Deck Detail -->
+	<div class="discard">{{game.data.shoe.discardIndex}}</div>
+	<div class="shoe">{{game.data.shoe.deckcount-game.data.shoe.discardIndex}}</div>
+	<div class="shoe-shuffle">Shuffle at:{{game.data.shoe.deckcount-game.data.shoe.shuffleIndex}}</div>
+	
+	
+	<!-- Players -->
+	<div class="players" ng-class="game.data.state == 4 ? 'gameover' : ''">
+		<div class="player" id="player-{{$index}}" ng-repeat="player in game.data.table.players" ng-if="player.game.hand.length != 0" >
+			
+			<!-- Player Hand -->
+			<div class="hand">
+				<div class="card card-{{$index}} card-face-{{card.face}} card-suit-{{card.suit}}" ng-repeat="card in player.game.hand"></div>
+			 </div>
+			 
+			 <!-- Player Controls -->
+			<div class="controls" ng-if="game.data.table.activeplayerIndex == $index+1 && game.data.table.activeplayerIndex != 1" >
+				<button class="btn btn-danger btn-hit" ng-click="hit(player.id)">Hit</button>
+				<button class="btn btn-success btn-stay" ng-click="stay(player.id)">Stay</button>
+			</div>
+			
+			<!-- Player Status Box -->
+			<div class="player-detail">
+				<div class="player-name">{{player.name}} </div>
+				<div class="player-count" >
+					<span ng-if="game.data.table.activeplayerIndex == 1 || $index > 0 || game.data.state == 4">{{player.game.count}}</span>
+					<span ng-if="game.data.table.activeplayerIndex != 1 && $index == 0 && game.data.state != 4">{{player.game.hand[0].value}}</span>
+				</div>
+				<div ng-if="$index != 0" class="player-record">({{player.record.wins}}/{{player.record.loses}})</div>
+			</div>
+			<div class="status status-{{player.game.status.mode}}">{{player.game.status.text}}</div>
+			<div ng-if="player.game.status.id > 0" class="btn status  status-bg" ng-class="{'active': game.data.table.activeplayerIndex == $index+1}">&nbsp;</div>
+		</div>
+	</div>
+	
+	
+	<!-- Deal Button -->
+	<button ng-if="game.data.state == 4"  class="btn btn-success btn-new-deal" ng-click="newDeal()">New Deal</button>
+	
+	
+	<!-- New Game Form -->
+	<div id="form-game-new" ng-if="tableStatus == 0 || game.data.state == 4">
+		<select ng-model="decks" class="form-control" ng-options="item.name for item in deckOptions"></select>
+		<select ng-model="players" class="form-control"  ng-options="item.name for item in playerOptions"></select>
+		<button  class="btn btn-success" ng-click="newGame()">Create New Game</button>
+		<div class="form-game-new-bg btn">&nbsp;</div>
+	</div>
+</div>
