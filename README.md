@@ -1,8 +1,8 @@
 # Blackjack
 Blackjack Demo with Coldfusion and AngularJs
 
-# Requirement Downloads
-- CFwheels (1.4.2) - http://docs.cfwheels.org/page/download
+# Required Downloads
+- CFwheels (1.4.2) - http://docs.cfwheels.org/page/download (installed at the root)
 
 # Frameworks Used
 - CfWheels
@@ -26,7 +26,34 @@ Create a blackjack game demo to meet the following requirements under "Blackjack
 - **saveGame** - This is a stubed in end point to save the game history
 - **getGameFull** - Return the internat game structure including the full shoe detail. (Not For Production Use)
 
-### Blackjack as a Service (BaaS) with Micro UI
+## Development Notes
+The application structure was chosen as a pragmatic solution to deliver the needed functionality while demonstrating the desired coding skills. There are elements of OOP & MVC being used, but due to time constraints and coding exploration it may have deviated from some of my usual coding practices.
+
+One of the elements that is missing that would be a normally be a part of the structure is a service layer in the REST application. CfWheels does not natively "promote" a service layer, but it can be added. I opted instead for a thicker model layer with model objects there are more functionally aware. I do not see this a necessarily as a short coming but has the potential to limiting in larger scale application. Additional a service layer would allow for a slight thinning of the functionality currently in the game controller.
+
+The game state and functionality is solely in the API, leaving the UI with no functional operations that could corrupt the outcome of the game.
+
+## Requirements Not Met and Compromises
+- Aces can count as 11 or 1. Sorry I could not with good conscience make a Blackjack game without it.
+- Game Data Persistence
+	Simply because of time constraints the game score is maintained in the session and will be reset is a full new game is requested. It is possible in the near future to add game and player record data persistence, but I'm currently out of time. That being said the player game history is displayed real-time for each player at the table in their status boxes. (Win/Loss) Push data is maintained but not displayed.
+    
+    Planned persistance through either MS SQL or Mongo
+
+## Requirements Exceeded
+- Aces are 11 or 1. Again not blackjack without it. :P
+- Up to 5 player in addition to the dealer. With further development with could be extended to remote player capability.
+- UI exceeded required game “test harness” playablity
+- Multi-Deck Shoe with a random shuffle index (the yellow cutting card at the casino)
+- 
+
+## Scalability 
+If the game data was persisted the game platform would be scalable across a stateless cluster with some minor changes. Although load balancers with sticky sessions would allow a scalability as well. There are code notes alluding to the topic.
+
+
+
+
+## Project Requirements : Blackjack as a Service (BaaS) with Micro UI
 
 #### Purpose
 The goal of this exercise is to create a RESTful API that can be consumed by a simple UI layer. This will be one player vs one automated dealer. The UI can be extremely simple and will serve as mostly a “test harness” around your service. You are building both the service and the UI.
