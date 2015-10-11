@@ -1,9 +1,30 @@
 # Blackjack
 Blackjack Demo with Coldfusion and AngularJs
 
+# Requirement Downloads
+- CFwheels (1.4.2) - http://docs.cfwheels.org/page/download
+
+# Frameworks Used
+- CfWheels
+- AngularJs
+	- angular-route
+    - angular-resource
+- Jquery
+- Bootstrap
+
 
 ## Goal
-Create a blackjack game demo to meet the following requirements:
+Create a blackjack game demo to meet the following requirements under "Blackjack as a Service (BaaS) with Micro UI"
+
+## End Points
+- **new** - Creates new games, with a new shoe and players
+- **clearTable** - Clears the table and deals a new hand
+- **deal** - Deals the next hand. Last hand must be completed first
+- **action** - Player Action requests, Hit & Stay
+- **dealerAction** - Advances to the next dealer action.
+- **getGame** - Gets the public game structure. Same structe that is returned from other public endpoints with no action executed.
+- **saveGame** - This is a stubed in end point to save the game history
+- **getGameFull** - Return the internat game structure including the full shoe detail. (Not For Production Use)
 
 ### Blackjack as a Service (BaaS) with Micro UI
 
