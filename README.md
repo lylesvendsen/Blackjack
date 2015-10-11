@@ -1,6 +1,10 @@
 # Blackjack
 Blackjack Demo with Coldfusion and AngularJs
 
+# Demo
+	- [Live Demo](http://ec2-52-3-254-64.compute-1.amazonaws.com/app/)
+    - Server AWS Micro Instance - It's a little slow, but does the job.
+
 # Required Downloads
 - CFwheels (1.4.2) - http://docs.cfwheels.org/page/download (installed at the root)
 
@@ -49,7 +53,6 @@ The game state and functionality is solely in the API, leaving the UI with no fu
 
 ## Scalability 
 If the game data was persisted the game platform would be scalable across a stateless cluster with some minor changes. Although load balancers with sticky sessions would allow a scalability as well. There are code notes alluding to the topic.
-
 
 
 
