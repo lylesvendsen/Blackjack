@@ -2,8 +2,10 @@
 Blackjack Demo with Coldfusion and AngularJs
 
 # Demo
-	- http://ec2-52-3-254-64.compute-1.amazonaws.com/app/
-    - Server AWS Micro Instance - It's a little slow, but does the job.
+[Live Demo](http://ec2-52-3-254-64.compute-1.amazonaws.com/app/)
+
+Server AWS Micro Instance - It's a little slow, but does the job.
+
 
 # Required Downloads
 - CFwheels (1.4.2) - http://docs.cfwheels.org/page/download (installed at the root)
@@ -49,7 +51,6 @@ The game state and functionality is solely in the API, leaving the UI with no fu
 - Up to 5 player in addition to the dealer. With further development with could be extended to remote player capability.
 - UI exceeded required game “test harness” playablity
 - Multi-Deck Shoe with a random shuffle index (the yellow cutting card at the casino)
-- 
 
 ## Scalability 
 If the game data was persisted the game platform would be scalable across a stateless cluster with some minor changes. Although load balancers with sticky sessions would allow a scalability as well. There are code notes alluding to the topic.
