@@ -1,8 +1,6 @@
 # Blackjack
 Blackjack using Coldfusion and AngularJs
 
-Server AWS Micro Instance - It's a little slow, but does the job.
-
 # Required Downloads
 - CFwheels (1.4.2) - http://docs.cfwheels.org/page/download (installed at the root)
 
