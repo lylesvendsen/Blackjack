@@ -1,5 +1,5 @@
 # Blackjack
-Blackjack Demo with Coldfusion and AngularJs
+Blackjack using Coldfusion and AngularJs
 
 Server AWS Micro Instance - It's a little slow, but does the job.
 
